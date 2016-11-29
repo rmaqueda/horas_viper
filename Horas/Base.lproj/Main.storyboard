@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qWZ-A4-8WM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ebl-Qi-FDw">
+            <objects>
+                <navigationController id="qWZ-A4-8WM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RnI-m7-I9C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1e6-K4-JQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-682" y="119"/>
+        </scene>
+        <!--Checkin View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="CheckinViewControllerIdentifier" id="BYZ-38-t0r" customClass="CheckinViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POh-fb-IFD">
+                                <state key="normal" title="Checkin"/>
+                                <connections>
+                                    <action selector="didPressCheckinButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="chp-rp-w6u"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MKh-yh-9QT">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="rn9-Sa-YgS"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="DaS-c8-rLc"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MKh-yh-9QT" secondAttribute="trailing" id="7c0-mh-Zyg"/>
+                            <constraint firstItem="MKh-yh-9QT" firstAttribute="top" secondItem="POh-fb-IFD" secondAttribute="bottom" constant="16" id="Csv-GU-TVz"/>
+                            <constraint firstItem="MKh-yh-9QT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DM7-fv-AcC"/>
+                            <constraint firstItem="POh-fb-IFD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="PxM-37-wIl"/>
+                            <constraint firstItem="MKh-yh-9QT" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Sz7-Ee-bYi"/>
+                            <constraint firstItem="MKh-yh-9QT" firstAttribute="centerX" secondItem="POh-fb-IFD" secondAttribute="centerX" id="mHa-jW-vZ6"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="checkinButton" destination="POh-fb-IFD" id="j94-yb-bmn"/>
+                        <outlet property="tableView" destination="MKh-yh-9QT" id="S0Z-pe-7Nc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10" y="118"/>
+        </scene>
+    </scenes>
+</document>
